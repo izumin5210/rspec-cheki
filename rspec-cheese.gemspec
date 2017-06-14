@@ -5,7 +5,7 @@ require 'rspec/cheese/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-cheese"
-  spec.version       = Rspec::Cheese::VERSION
+  spec.version       = RSpec::Cheese::VERSION
   spec.authors       = ["izumin5210"]
   spec.email         = ["masayuki@izumin.info"]
 

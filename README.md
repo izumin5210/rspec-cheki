@@ -1,4 +1,4 @@
-# Rspec::Cheese
+# RSpec::Cheese
 [![Build Status](https://travis-ci.org/izumin5210/rspec-cheese.svg?branch=master)](https://travis-ci.org/izumin5210/rspec-cheese)
 [![license](https://img.shields.io/github/license/izumin5210/rspec-cheese.svg)](https://github.com/izumin5210/rspec-cheese/blob/master/LICENSE.txt)
 
