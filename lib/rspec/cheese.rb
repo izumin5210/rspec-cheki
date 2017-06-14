@@ -1,7 +1,11 @@
 require "rspec/cheese/version"
+require "rspec/cheese/snapshot"
+require "rspec/cheese/matchers"
 
-module Rspec
+module RSpec
   module Cheese
-    # Your code goes here...
+    RSpec.configure do |config|
+      config.include Matchers
+    end
   end
 end
