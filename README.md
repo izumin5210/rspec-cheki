@@ -4,6 +4,14 @@
 
 Support snapshot testing, inspired [Jest](https://facebook.github.io/jest/).
 
+```ruby
+expect(response.body).to match_snapshot
+
+# or...
+
+expect(response.body).to say_cheese
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +30,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Requrie `rspec-cheese` from your `spec_helper.rb`.
+
+```ruby
+requrie 'rspec-cheese'
+```
 
 ## Development
 
