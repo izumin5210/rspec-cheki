@@ -1,4 +1,4 @@
-require 'rspec/cheese/matchers/match_snapshot'
+require "rspec/cheese/matchers/match_snapshot"
 
 module RSpec
   module Cheese

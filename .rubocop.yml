@@ -5,3 +5,11 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 2.3
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 100
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
