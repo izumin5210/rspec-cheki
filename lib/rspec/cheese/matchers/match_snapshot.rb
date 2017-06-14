@@ -21,7 +21,7 @@ module RSpec
           @expected = snapshot.data
           @actual = actual
 
-          pass = (actual == @expected)
+          pass = (actual == expected)
 
           if snapshot.added?
             snapshot.save @actual

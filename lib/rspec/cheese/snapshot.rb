@@ -63,7 +63,7 @@ module RSpec
       end
 
       def spec_path
-        example.file_path
+        @spec_path = File.expand_path(example.file_path)
       end
 
       def snapshots_dirname
