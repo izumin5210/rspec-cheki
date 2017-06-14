@@ -6,7 +6,7 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
   let(:spec_dirname) { File.dirname(spec_path) }
   let(:spec_basename) { File.basename(spec_path) }
   let(:snapshots_dirname) { File.join(spec_dirname, "__snapshots__") }
-  let(:snapshots_basename) { "#{spec_basename}.yaml.snap" }
+  let(:snapshots_basename) { "#{spec_basename}.yml.snap" }
   let(:snapshots_path) { File.join(snapshots_dirname, snapshots_basename) }
   let(:matcher) { RSpec::Cheese::Matchers::MatchSnapshot.new }
 

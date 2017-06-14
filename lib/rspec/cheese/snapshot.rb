@@ -5,7 +5,7 @@ module RSpec
     class Snapshot
       # TODO: Confugurable
       SNAPSHOTS_DIRNAME = '__snapshots__'
-      SNAPSHOTS_FILE_EXT = '.yaml.snap'
+      SNAPSHOTS_FILE_EXT = '.yml.snap'
 
       class << self
         def create(example:)
