@@ -39,11 +39,11 @@ module RSpec
         File.write(file_path, YAML.dump(@yaml))
       end
 
-      # Create the snapshot object from example and a stored snapshots file
-      # @param [RSpec::Core::Example] example The example
+      # Create the snapshot object from a stored snapshots file
+      # @param [String] key The snapshot key
       # @return [RSpec::Cheese::Snapshot] snapshot The snapshot
-      def create_snapshot(example:)
-        Snapshot.new(example).tap do |s|
+      def create_snapshot key
+        Snapshot.new(key).tap do |s|
           s.expected = @yaml[s.key] if @yaml.key? s.key
           snapshots[s.key] = s
         end

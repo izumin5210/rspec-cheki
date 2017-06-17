@@ -32,10 +32,10 @@ module RSpec
       # Create snapshot instance from example object
       # @param [RSpec::Core::Example] example The example
       # @return [RSpec::Cheese::Snapshot] The snapshot
-      def create_snapshot(example)
+      def create_snapshot example
         key = example.file_path
         @files[key] = SnapFile.create(example: example) unless @files.key? key
-        @files[key].create_snapshot(example: example)
+        @files[key].create_snapshot(example.id)
       end
 
       # Save snapshots to file
