@@ -1,4 +1,5 @@
 # RSpec::Cheki
+[![Gem Version](https://badge.fury.io/rb/rspec-cheki.svg)](https://badge.fury.io/rb/rspec-cheki)
 [![Build Status](https://travis-ci.org/izumin5210/rspec-cheki.svg?branch=master)](https://travis-ci.org/izumin5210/rspec-cheki)
 [![license](https://img.shields.io/github/license/izumin5210/rspec-cheki.svg)](https://github.com/izumin5210/rspec-cheki/blob/master/LICENSE.txt)
 
