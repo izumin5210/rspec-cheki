@@ -33,8 +33,8 @@ module RSpec
       # Save snapshots to file
       # @param update [boolean] Save updated snapshots if true
       def save(update: false)
-        snapshots.each do |key, snapshot|
-          @yaml[key] = snapshot.actual if snapshot.new? || (update && snapshot.new? && snapshot.changed?)
+        snapshots.each do |key, s|
+          @yaml[key] = (s.new? && s.changed?) ? s.actual : s.expected
         end
         File.write(file_path, YAML.dump(@yaml))
       end
@@ -67,7 +67,6 @@ module RSpec
 
       def init_paths spec_rel_path
         @spec_path = File.expand_path spec_rel_path
-        spec_basename = File.basename spec_path
         basename = "#{File.basename spec_path}#{SNAPSHOTS_FILE_EXT}"
         @dirname = File.join(File.dirname(spec_path), SNAPSHOTS_DIRNAME)
         @file_path = File.join(dirname, basename)
