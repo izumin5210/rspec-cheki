@@ -16,6 +16,6 @@ RSpec.configure do |config|
   config.add_setting RSpec::Cheki::Manager.settings_name, default: RSpec::Cheki::Manager.new
 
   config.after :suite do
-    # TODO: update snapshot if needed
+    RSpec::Cheki::Manager.update(update: !!ENV["UPDATE_SNAPSHOTS"])
   end
 end

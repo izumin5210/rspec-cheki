@@ -16,6 +16,12 @@ module RSpec
           SETTINGS_UPDATED_SNAPSHOTS
         end
 
+        # Save snapshots to file
+        # @param update [boolean] Save updated snapshots if true
+        def update(update: false)
+          instance.save(update: update)
+        end
+
         private
 
         def instance
@@ -41,7 +47,7 @@ module RSpec
       # Save snapshots to file
       # @param update [boolean] Save updated snapshots if true
       def save(update: false)
-        @files.each { |f| f.save(update: update) }
+        @files.each { |_, f| f.save(update: update) }
       end
     end
   end
