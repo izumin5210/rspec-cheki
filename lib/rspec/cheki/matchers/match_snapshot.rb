@@ -22,7 +22,7 @@ module RSpec
 
         def matches?(actual)
           snapshot.actual = actual
-          !snapshot.changed?
+          snapshot.match?
         end
 
         def diffable?
