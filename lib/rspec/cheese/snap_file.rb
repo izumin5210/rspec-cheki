@@ -11,7 +11,7 @@ module RSpec
         # @return [RSpec::Cheese::SnapFile] The SnapFile object
         def create(example:)
           SnapFile.new(example.file_path).tap do |file|
-            file.create_snapshots_file unless file.exists?
+            file.create_snapshots_file
             file.load
           end
         end
@@ -34,7 +34,7 @@ module RSpec
       # @param update [boolean] Save updated snapshots if true
       def save(update: false)
         snapshots.each do |key, snapshot|
-          @yaml[key] = snapshot.actual if snapshot.new? || (update && snapshot.changed?)
+          @yaml[key] = snapshot.actual if snapshot.new? || (update && snapshot.new? && snapshot.changed?)
         end
         File.write(file_path, YAML.dump(@yaml))
       end
@@ -43,6 +43,7 @@ module RSpec
       # @param [String] key The snapshot key
       # @return [RSpec::Cheese::Snapshot] snapshot The snapshot
       def create_snapshot key
+        fail SnapshotsFileNotLoadedError if @yaml.nil?
         Snapshot.new(key).tap do |s|
           s.expected = @yaml[s.key] if @yaml.key? s.key
           snapshots[s.key] = s
@@ -56,8 +57,10 @@ module RSpec
 
       # Create the snapshots directory and the file
       def create_snapshots_file
-        FileUtils.mkdir dirname unless File.exist? dirname
-        FileUtils.touch file_path
+        unless exists?
+          FileUtils.mkdir dirname unless File.exist? dirname
+          FileUtils.touch file_path
+        end
       end
 
       private

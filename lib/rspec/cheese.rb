@@ -1,8 +1,9 @@
-require "rspec/cheese/version"
+require "rspec/cheese/errors"
 require "rspec/cheese/manager"
 require "rspec/cheese/matchers"
 require "rspec/cheese/snap_file"
 require "rspec/cheese/snapshot"
+require "rspec/cheese/version"
 
 module RSpec
   module Cheese
