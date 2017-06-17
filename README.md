@@ -36,6 +36,23 @@ Requrie `rspec-cheki` from your `spec_helper.rb`.
 requrie 'rspec-cheki'
 ```
 
+### `match_snapshot` matcher
+
+```ruby
+expect(response.body).to match_snapshot
+
+# And you can use `say_cheese` matcher (This is an alias of `match_snapshot` matcher)
+expect(response.body).to say_cheese
+```
+
+### Update snapshots
+
+Run rspec with `UPDATE_SNAPSHOTS=1` to update snapshtos files.
+
+```
+$ UPDATE_SNAPSHOTS=1 rspec
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
