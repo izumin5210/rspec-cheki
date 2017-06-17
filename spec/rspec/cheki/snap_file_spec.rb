@@ -43,7 +43,7 @@ describe RSpec::Cheki::SnapFile do
         let(:file_content) do
           <<~YAML
           ---
-          "#{example.id}": |
+          "#{example.id}": |-
             foo
             bar
             baz
@@ -85,7 +85,7 @@ describe RSpec::Cheki::SnapFile do
     let(:file_content) do
       <<~YAML
       ---
-      "#{example_ids[0]}": |
+      "#{example_ids[0]}": |-
         foo
         bar
       "#{example_ids[1]}": 1
@@ -109,7 +109,7 @@ describe RSpec::Cheki::SnapFile do
       let(:updated_snapshot_content) do
         <<~YAML
         ---
-        "#{example_ids[0]}": |
+        "#{example_ids[0]}": |-
           foo
           bar
         "#{example_ids[1]}": 1
@@ -128,9 +128,9 @@ describe RSpec::Cheki::SnapFile do
       let(:updated_snapshot_content) do
         <<~YAML
         ---
-        "#{example_ids[0]}": |
+        "#{example_ids[0]}": |-
           foo
-          bar
+          baz
         "#{example_ids[1]}": 1
         "#{example_ids[3]}": true
         "#{example_ids[2]}": "[1, 3, 5, 8]"

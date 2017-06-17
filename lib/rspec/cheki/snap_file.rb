@@ -34,7 +34,7 @@ module RSpec
       # @param update [boolean] Save updated snapshots if true
       def save(update: false)
         snapshots.each do |key, s|
-          @yaml[key] = (s.new? && s.changed?) ? s.actual : s.expected
+          @yaml[key] = (s.new? || (update && s.changed? && !s.actual.nil? && !s.new?)) ? s.actual : s.expected
         end
         File.write(file_path, YAML.dump(@yaml))
       end
