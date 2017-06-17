@@ -18,6 +18,7 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
   subject { matcher.matches?(expected) }
 
   before do
+    allow(RSpec::Cheese::Manager).to receive(:instance).and_return(RSpec::Cheese::Manager.new)
     allow(File).to receive(:exist?).with(snapshots_dirname).and_return(snapshots_dir_exists?)
     allow(File).to receive(:exist?).with(snapshots_path).and_return(snapshots_file_exists?)
     allow(File).to receive(:read).with(snapshots_path).and_return(snapshots_file_content)
@@ -32,7 +33,6 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
     it "creates __snapshots__ directory and file" do
       expect(FileUtils).to receive(:mkdir).with(snapshots_dirname)
       expect(FileUtils).to receive(:touch).with(snapshots_path)
-      expect(File).to receive(:write)
       is_expected.to be false
     end
   end
@@ -43,7 +43,6 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
     it "creates __snapshots__ directory and file" do
       expect(FileUtils).to_not receive(:mkdir)
       expect(FileUtils).to receive(:touch).with(snapshots_path)
-      expect(File).to receive(:write)
       is_expected.to be false
     end
   end
@@ -76,7 +75,6 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
     it do
       expect(FileUtils).to_not receive(:mkdir)
       expect(FileUtils).to_not receive(:touch)
-      expect(File).to_not receive(:write)
       is_expected.to be true
     end
   end

@@ -2,11 +2,14 @@ module RSpec
   module Cheese
     module Matchers
       class MatchSnapshot
-        attr_reader :expected, :actual, :example, :snapshot
+        attr_reader :example, :snapshot
+
+        extend Forwardable
+        def_delegators :snapshot, :expected, :actual
 
         def initialize
           @example = RSpec.current_example
-          @snapshot = Snapshot.create(example: example)
+          @snapshot = RSpec::Cheese::Manager.create_snapshot(example: example)
         end
 
         def failure_message
@@ -18,17 +21,8 @@ module RSpec
         end
 
         def matches?(actual)
-          @expected = snapshot.data
-          @actual = actual
-
-          pass = (actual == expected)
-
-          if snapshot.added?
-            snapshot.save @actual
-            RSpec.configuration.reporter.message "Generate #{snapshot.snapshots_path}"
-          end
-
-          pass
+          snapshot.actual = actual
+          !snapshot.changed?
         end
 
         def diffable?
