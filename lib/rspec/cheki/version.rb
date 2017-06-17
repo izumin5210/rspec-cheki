@@ -1,5 +1,5 @@
 module RSpec
-  module Cheese
+  module Cheki
     VERSION = "0.1.0"
   end
 end

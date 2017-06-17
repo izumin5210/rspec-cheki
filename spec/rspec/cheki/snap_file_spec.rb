@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RSpec::Cheese::SnapFile do
+describe RSpec::Cheki::SnapFile do
   include FakeFS::SpecHelpers
   before do
     FileUtils.mkdir_p spec_dirname
@@ -13,14 +13,14 @@ describe RSpec::Cheese::SnapFile do
   let(:snapshots_dirname) { File.join(spec_dirname, "__snapshots__") }
   let(:snapshots_basename) { "#{spec_basename}.yml.snap" }
   let(:snapshots_file_path) { File.join(snapshots_dirname, snapshots_basename) }
-  let(:snap_file) { RSpec::Cheese::SnapFile.new(spec_file_path) }
+  let(:snap_file) { RSpec::Cheki::SnapFile.new(spec_file_path) }
 
   describe "#create_snapshot" do
     let(:snapshot) { snap_file.create_snapshot example.id }
     subject { snapshot }
 
     context "when the snapshots file is not loaded" do
-      it { expect { subject }.to raise_error RSpec::Cheese::SnapshotsFileNotLoadedError }
+      it { expect { subject }.to raise_error RSpec::Cheki::SnapshotsFileNotLoadedError }
     end
 
     context "when the snapshots file is loaded" do

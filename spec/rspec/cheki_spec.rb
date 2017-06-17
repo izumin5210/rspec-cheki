@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe RSpec::Cheese do
+describe RSpec::Cheki do
   it "has a version number" do
-    expect(RSpec::Cheese::VERSION).not_to be nil
+    expect(RSpec::Cheki::VERSION).not_to be nil
   end
 
   it "says cheese!" do

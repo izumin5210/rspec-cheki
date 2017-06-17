@@ -1,5 +1,5 @@
 module RSpec
-  module Cheese
+  module Cheki
     class SnapFile
       # TODO: Should be confugurable
       SNAPSHOTS_DIRNAME = "__snapshots__"
@@ -8,7 +8,7 @@ module RSpec
       class << self
         # Creata SnapFile instance from example object
         # @param [RSpec::Core::Example] example The example
-        # @return [RSpec::Cheese::SnapFile] The SnapFile object
+        # @return [RSpec::Cheki::SnapFile] The SnapFile object
         def create(example:)
           SnapFile.new(example.file_path).tap do |file|
             file.create_snapshots_file
@@ -41,7 +41,7 @@ module RSpec
 
       # Create the snapshot object from a stored snapshots file
       # @param [String] key The snapshot key
-      # @return [RSpec::Cheese::Snapshot] snapshot The snapshot
+      # @return [RSpec::Cheki::Snapshot] snapshot The snapshot
       def create_snapshot key
         fail SnapshotsFileNotLoadedError if @yaml.nil?
         Snapshot.new(key).tap do |s|
