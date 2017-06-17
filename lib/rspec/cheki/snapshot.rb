@@ -1,7 +1,7 @@
 require "yaml"
 
 module RSpec
-  module Cheese
+  module Cheki
     class Snapshot
       attr_reader :key
       attr_accessor :expected, :actual

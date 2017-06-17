@@ -1,5 +1,5 @@
 module RSpec
-  module Cheese
+  module Cheki
     module Matchers
       class MatchSnapshot
         attr_reader :example, :snapshot
@@ -9,7 +9,7 @@ module RSpec
 
         def initialize
           @example = RSpec.current_example
-          @snapshot = RSpec::Cheese::Manager.create_snapshot(example: example)
+          @snapshot = RSpec::Cheki::Manager.create_snapshot(example: example)
         end
 
         def failure_message

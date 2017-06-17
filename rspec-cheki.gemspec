@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "rspec/cheese/version"
+require "rspec/cheki/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rspec-cheese"
-  spec.version       = RSpec::Cheese::VERSION
+  spec.name          = "rspec-cheki"
+  spec.version       = RSpec::Cheki::VERSION
   spec.authors       = ["izumin5210"]
   spec.email         = ["masayuki@izumin.info"]
 
-  spec.summary       = %q{RSpec::Cheese supports snapshot testing, inspired by Jest}
+  spec.summary       = %q{RSpec::Cheki supports snapshot testing, inspired by Jest}
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/izumin5210/rspec-cheese"
+  spec.homepage      = "https://github.com/izumin5210/rspec-cheki"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

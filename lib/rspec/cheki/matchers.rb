@@ -1,7 +1,7 @@
-require "rspec/cheese/matchers/match_snapshot"
+require "rspec/cheki/matchers/match_snapshot"
 
 module RSpec
-  module Cheese
+  module Cheki
     module Matchers
       def match_snapshot
         MatchSnapshot.new

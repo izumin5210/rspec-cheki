@@ -1,5 +1,5 @@
 module RSpec
-  module Cheese
+  module Cheki
     class SnapshotsFileNotLoadedError < StandardError; end
   end
 end

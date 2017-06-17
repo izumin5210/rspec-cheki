@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RSpec::Cheese::Matchers::MatchSnapshot do
+describe RSpec::Cheki::Matchers::MatchSnapshot do
   let(:example) { RSpec.current_example }
   let(:spec_path) { File.expand_path(example.file_path) }
   let(:spec_dirname) { File.dirname(spec_path) }
@@ -8,7 +8,7 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
   let(:snapshots_dirname) { File.join(spec_dirname, "__snapshots__") }
   let(:snapshots_basename) { "#{spec_basename}.yml.snap" }
   let(:snapshots_path) { File.join(snapshots_dirname, snapshots_basename) }
-  let(:matcher) { RSpec::Cheese::Matchers::MatchSnapshot.new }
+  let(:matcher) { RSpec::Cheki::Matchers::MatchSnapshot.new }
 
   let(:snapshots_dir_exists?) { true }
   let(:snapshots_file_exists?) { true }
@@ -18,7 +18,7 @@ describe RSpec::Cheese::Matchers::MatchSnapshot do
   subject { matcher.matches?(expected) }
 
   before do
-    allow(RSpec::Cheese::Manager).to receive(:instance).and_return(RSpec::Cheese::Manager.new)
+    allow(RSpec::Cheki::Manager).to receive(:instance).and_return(RSpec::Cheki::Manager.new)
     allow(File).to receive(:exist?).with(snapshots_dirname).and_return(snapshots_dir_exists?)
     allow(File).to receive(:exist?).with(snapshots_path).and_return(snapshots_file_exists?)
     allow(File).to receive(:read).with(snapshots_path).and_return(snapshots_file_content)

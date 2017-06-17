@@ -1,6 +1,6 @@
-# RSpec::Cheese
-[![Build Status](https://travis-ci.org/izumin5210/rspec-cheese.svg?branch=master)](https://travis-ci.org/izumin5210/rspec-cheese)
-[![license](https://img.shields.io/github/license/izumin5210/rspec-cheese.svg)](https://github.com/izumin5210/rspec-cheese/blob/master/LICENSE.txt)
+# RSpec::Cheki
+[![Build Status](https://travis-ci.org/izumin5210/rspec-cheki.svg?branch=master)](https://travis-ci.org/izumin5210/rspec-cheki)
+[![license](https://img.shields.io/github/license/izumin5210/rspec-cheki.svg)](https://github.com/izumin5210/rspec-cheki/blob/master/LICENSE.txt)
 
 Support snapshot testing, inspired [Jest](https://facebook.github.io/jest/).
 
@@ -17,7 +17,7 @@ expect(response.body).to say_cheese
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rspec-cheese'
+gem 'rspec-cheki'
 ```
 
 And then execute:
@@ -26,14 +26,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rspec-cheese
+    $ gem install rspec-cheki
 
 ## Usage
 
-Requrie `rspec-cheese` from your `spec_helper.rb`.
+Requrie `rspec-cheki` from your `spec_helper.rb`.
 
 ```ruby
-requrie 'rspec-cheese'
+requrie 'rspec-cheki'
 ```
 
 ## Development
@@ -44,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-cheese. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-cheki. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

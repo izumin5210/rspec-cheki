@@ -1,12 +1,12 @@
 module RSpec
-  module Cheese
+  module Cheki
     class Manager
-      SETTINGS_UPDATED_SNAPSHOTS = :"rspec_cheese__updater"
+      SETTINGS_UPDATED_SNAPSHOTS = :"rspec_cheki__updater"
 
       class << self
         # Create snapshot instance from example object
         # @param [RSpec::Core::Example] example The example
-        # @return [RSpec::Cheese::Snapshot] The snapshot
+        # @return [RSpec::Cheki::Snapshot] The snapshot
         def create_snapshot(example:)
           instance.create_snapshot(example)
         end
@@ -31,7 +31,7 @@ module RSpec
 
       # Create snapshot instance from example object
       # @param [RSpec::Core::Example] example The example
-      # @return [RSpec::Cheese::Snapshot] The snapshot
+      # @return [RSpec::Cheki::Snapshot] The snapshot
       def create_snapshot example
         key = example.file_path
         @files[key] = SnapFile.create(example: example) unless @files.key? key
