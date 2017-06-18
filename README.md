@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/izumin5210/rspec-cheki.svg?branch=master)](https://travis-ci.org/izumin5210/rspec-cheki)
 [![license](https://img.shields.io/github/license/izumin5210/rspec-cheki.svg)](https://github.com/izumin5210/rspec-cheki/blob/master/LICENSE.txt)
 [![Dependency Status](https://gemnasium.com/badges/github.com/izumin5210/rspec-cheki.svg)](https://gemnasium.com/github.com/izumin5210/rspec-cheki)
+[![Inline docs](http://inch-ci.org/github/izumin5210/rspec-cheki.svg?branch=master&style=shields)](http://inch-ci.org/github/izumin5210/rspec-cheki)
 
 Support snapshot testing, inspired [Jest](https://facebook.github.io/jest/).
 
