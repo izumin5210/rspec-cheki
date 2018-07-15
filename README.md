@@ -5,7 +5,7 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/izumin5210/rspec-cheki.svg)](https://gemnasium.com/github.com/izumin5210/rspec-cheki)
 [![Inline docs](http://inch-ci.org/github/izumin5210/rspec-cheki.svg?branch=master&style=shields)](http://inch-ci.org/github/izumin5210/rspec-cheki)
 
-Support snapshot testing, inspired [Jest](https://facebook.github.io/jest/).
+Support snapshot testing, inspired by [Jest](https://facebook.github.io/jest/).
 
 ```ruby
 expect(response.body).to match_snapshot
@@ -33,10 +33,10 @@ Or install it yourself as:
 
 ## Usage
 
-Requrie `rspec-cheki` from your `spec_helper.rb`.
+Require `rspec/cheki` from your `spec_helper.rb`.
 
 ```ruby
-requrie 'rspec-cheki'
+require 'rspec/cheki'
 ```
 
 ### `match_snapshot` matcher
@@ -50,7 +50,7 @@ expect(response.body).to say_cheese
 
 ### Update snapshots
 
-Run rspec with `UPDATE_SNAPSHOTS=1` to update snapshtos files.
+Run rspec with `UPDATE_SNAPSHOTS=1` to update snapshot files.
 
 ```
 $ UPDATE_SNAPSHOTS=1 rspec
@@ -70,4 +70,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
